@@ -5,17 +5,9 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy_djangoitem import DjangoItem
+from ui.polls.models import Tarkari
 
 
-class TarkariItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    name = scrapy.Field()
-    unit = scrapy.Field()
-    minimum = scrapy.Field()
-    maximum = scrapy.Field()
-    average = scrapy.Field()
-    price = scrapy.Field()
-    datee = scrapy.Field()
-    pass
+class TarkariItem(DjangoItem):
+    django_model = Tarkari
